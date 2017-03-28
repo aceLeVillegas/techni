@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 05:57 PM
+-- Generation Time: Mar 27, 2017 at 06:12 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `Client`
 --
 
+DROP TABLE IF EXISTS `Client`;
 CREATE TABLE IF NOT EXISTS `Client` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
@@ -58,6 +59,7 @@ INSERT INTO `Client` (`username`, `password`, `nameFirst`, `nameLast`, `email`, 
 -- Table structure for table `Order`
 --
 
+DROP TABLE IF EXISTS `Order`;
 CREATE TABLE IF NOT EXISTS `Order` (
   `orderID` int(11) NOT NULL AUTO_INCREMENT,
   `total` float NOT NULL,
@@ -81,6 +83,7 @@ INSERT INTO `Order` (`orderID`, `total`, `orderDate`, `address`, `clientUserName
 -- Table structure for table `Order Product`
 --
 
+DROP TABLE IF EXISTS `Order Product`;
 CREATE TABLE IF NOT EXISTS `Order Product` (
   `productID` int(11) NOT NULL,
   `orderID` int(11) NOT NULL,
@@ -104,6 +107,7 @@ INSERT INTO `Order Product` (`productID`, `orderID`, `quantity`, `deliveryType`)
 -- Table structure for table `Product`
 --
 
+DROP TABLE IF EXISTS `Product`;
 CREATE TABLE IF NOT EXISTS `Product` (
   `productID` int(11) NOT NULL AUTO_INCREMENT,
   `productTypeID` int(11) NOT NULL,
@@ -150,6 +154,7 @@ INSERT INTO `Product` (`productID`, `productTypeID`, `productName`, `description
 -- Table structure for table `Product Type`
 --
 
+DROP TABLE IF EXISTS `Product Type`;
 CREATE TABLE IF NOT EXISTS `Product Type` (
   `productTypeID` int(11) NOT NULL AUTO_INCREMENT,
   `typeName` varchar(30) NOT NULL,

@@ -1,0 +1,47 @@
+.search{
+    width: 30px;
+    height: 25px;
+    margin-top: 0px;
+    margin-bottom: -5px;
+}
+
+#topDiv{
+    background-color: #edeeef;
+    
+}
+
+.categories{
+    background-color: #F7CE3E;
+    height: 30px;
+    
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+}
+    
+li{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+a{
+    color:#0A1612;
+    font-size: 25px;
+    text-decoration: none
+}
+    
+a:hover{
+    background-color: #C5C1C0;
+}
+
+.visited{
+        background-color: #edeeef;
+        text-decoration: none !important;
+        color:#0A1612;
+    }
+    
