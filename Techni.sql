@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 06:12 PM
+-- Generation Time: Mar 28, 2017 at 08:57 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `Product` (
   `style` varchar(30) NOT NULL,
   `price` float NOT NULL,
   PRIMARY KEY (`productID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `Product`
@@ -146,7 +146,25 @@ INSERT INTO `Product` (`productID`, `productTypeID`, `productName`, `description
 (17, 2, 'Pieta', 'Created by Michelangelo (1475-1564), the Pieta depicts the Virgin Mary holding her only son, Jesus Christ, in her arms. Prior to sculpting the Pieta, Michelangelo was not a very known artist. He was only in his early twenties when he was told, in 1498, to do a life sized sculpture of the Virgin Mary holding her son in her arms. In about two years, from a single slab of marble, Michelangelo created one of the most beautiful sculptures ever.', 4434, 23, 1564, 'Michelangelo', 'Renaissance', 1236540),
 (18, 2, 'The Thinker', 'Also from Auguste Rodin, is the famous sculpture “The Thinker.” Originally named The Poet, the piece was part of a commission by the Musée des Arts Décoratifs, Paris to create a monumental portal to act as the door of the museum. Rodin based his theme on The Divine Comedy of Dante and entitled the portal The Gates of Hell. Each of the statues in the piece represented one of the main characters in the epic poem. The Thinker was originally meant to depict Dante in front of the Gates of Hell, pondering his great poem. (In the final sculpture, a miniature of the statue sits atop the gates, pondering the hellish fate of those beneath him.) The sculpture is nude, as Rodin wanted a heroic figure in the tradition of Michelangelo, to represent intellect as well as poetry.', 300, 70, 1904, 'Auguste Rodin', 'Philosophy', 4785770),
 (19, 2, 'Venus de Milo', 'he Venus de Milo sculpture was created sometime between 100 and 130 B.C. it is believed to depict Aphrodite (Venus to the Romans) the Greek goddess of love and beauty. It is a marble sculpture, slightly larger than life size at 203 cm (6 ft 8 in) high. Its arms and original plinth have been lost. From an inscription that was on its plinth, it is thought to be the work of Alexandros of Antioch; it was earlier mistakenly attributed to the master sculptor Praxiteles. It is at present on display at the Louvre Museum in Paris. Amazingly, the statue was discovered accidentally in a farmer’s field.', 523, 29, -100, 'unknown', 'Greek', 12312400),
-(20, 2, 'David', '“David” is a masterpiece of Renaissance sculpture created between 1501 and 1504, by the Italian artist Michelangelo. It is a 5.17 meter (17 feet) marble statue of a standing male nude. The statue represents the Biblical hero David, a favored subject in the art of Florence. Originally commissioned as one of a series to be positioned high up on the facade of Florence Cathedral, the statue was instead placed in a public square, outside the Palazzo Della Signoria, the seat of civic government in Florence, where it was unveiled on 8 September, 1504. Because of the nature of the hero that it represented, it soon came to symbolize the defense of civil liberties embodied in the Florentine Republic, an independent city-state threatened on all sides by more powerful rival states and by the hegemony of the Medici family. The eyes of David, with a warning glare, were turned towards Rome. The statue was moved to the Academia Gallery in Florence in 1873, and later replaced at the original location by a replica.', 100, 30, 1504, 'Michaelangelo', 'Renaissance', 100000000);
+(20, 2, 'David', '“David” is a masterpiece of Renaissance sculpture created between 1501 and 1504, by the Italian artist Michelangelo. It is a 5.17 meter (17 feet) marble statue of a standing male nude. The statue represents the Biblical hero David, a favored subject in the art of Florence. Originally commissioned as one of a series to be positioned high up on the facade of Florence Cathedral, the statue was instead placed in a public square, outside the Palazzo Della Signoria, the seat of civic government in Florence, where it was unveiled on 8 September, 1504. Because of the nature of the hero that it represented, it soon came to symbolize the defense of civil liberties embodied in the Florentine Republic, an independent city-state threatened on all sides by more powerful rival states and by the hegemony of the Medici family. The eyes of David, with a warning glare, were turned towards Rome. The statue was moved to the Academia Gallery in Florence in 1873, and later replaced at the original location by a replica.', 100, 30, 1504, 'Michaelangelo', 'Renaissance', 100000000),
+(21, 3, 'Sun', 'Beautiful photograph of a sunset ', 5, 1, 2015, 'Lisa Pinettski', 'Modern', 25),
+(22, 3, 'Landscape', 'Photograph of a landscape with some trees and mountains', 7, 2, 2017, 'Michael Cervantes', 'Modern', 40),
+(23, 4, 'Graduation Card', 'Gift Card for any graduating student. Says "Congratulations" on the inside', 1, 1, 2016, 'Brian Geiger', 'Modern', 3),
+(24, 4, 'Birthday Card', 'Gift card for any birthday event. Says "Happy Birthday" on the inside with some balloons on the front.', 1, 1, 2016, 'Brian Geiger', 'Modern', 3),
+(25, 6, 'The Sorceror''s Stone', 'First Harry Potter book.', 2, 1, 1997, 'J. K. Rowling', 'Fantasy', 10),
+(26, 6, 'The Chamber of Secrets', 'Second harry Potter book.', 2, 2, 1998, 'J. K. Rowling', 'Fantasy', 12),
+(27, 6, 'The Prizoner of Azkaban', 'Third Harry Potter book.', 2, 2, 1999, 'J. K. Rowling', 'Fantasy', 13),
+(28, 6, 'The Goblet of Fire', 'Fourth Harry Potter book', 2, 2, 2000, 'J. K. Rowling', 'Fantasy', 14),
+(29, 6, 'Ender''s Game', 'First Ender series book', 2, 1, 1985, 'Orson Scott Card', 'Science Fiction', 9),
+(30, 6, 'Speaker of the Dead', 'Second Ender series book', 2, 2, 1986, 'Orson Scott Card', 'Science Fiction', 12),
+(33, 6, 'Xenocide', 'Third Ender Series book', 2, 2, 1991, 'Orson Scott Card', 'Science Fiction', 12),
+(34, 6, 'Children of the Mind', 'Fourth Ender Series book', 2, 2, 1996, 'Orson Scott Card', 'Science Fiction', 10),
+(35, 7, 'Mona Lisa Print', 'Reprinting of a classic Da Vinci painting', 1, 1, 2017, 'Leonardo da Vinci', 'Renaissance', 10),
+(36, 7, 'Lotus Flower Print', 'Reprint of a classic Monet painting', 1, 1, 2017, 'Claude Monet', 'Impressionist', 20),
+(37, 7, 'Starry Night Reprint', 'Reprinting of a famous Van Gogh painting', 1, 1, 2017, 'Vincent van Gogh', 'Landscape painting', 13),
+(38, 8, 'Sunset Lithograph', 'lithograph of a sunset', 1, 2, 2016, 'Mariah Carey', 'Landscape ', 4),
+(39, 7, 'Underwater Lithograph', 'Lithograph of an underwater scene', 1, 1, 2015, 'Spongebob Squarepants', 'Cartoon', 45),
+(40, 5, 'Bundle of Sticks', 'A mixed media work of art using sticks and twigs', 2, 5, 2010, 'Stickman Jones', 'stick', 300);
 
 -- --------------------------------------------------------
 
@@ -159,18 +177,21 @@ CREATE TABLE IF NOT EXISTS `Product Type` (
   `productTypeID` int(11) NOT NULL AUTO_INCREMENT,
   `typeName` varchar(30) NOT NULL,
   PRIMARY KEY (`productTypeID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `Product Type`
 --
 
 INSERT INTO `Product Type` (`productTypeID`, `typeName`) VALUES
-(1, 'Painting'),
+(1, 'Original Artwork'),
 (2, 'Sculpture'),
 (3, 'Photograph'),
 (4, 'Gift Card'),
-(5, 'Mixed Media');
+(5, 'Mixed Media'),
+(6, 'Book'),
+(7, 'Reproduction Print'),
+(8, 'Lithograph');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
