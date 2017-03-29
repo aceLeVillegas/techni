@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2017 at 08:57 PM
+-- Generation Time: Mar 29, 2017 at 11:58 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -42,16 +42,46 @@ CREATE TABLE IF NOT EXISTS `Client` (
 --
 
 INSERT INTO `Client` (`username`, `password`, `nameFirst`, `nameLast`, `email`, `phone`) VALUES
+('agellego', 'ogellega2893', 'Arnette', 'Gallego', 'agellego@csumb.edu', '(278) 486-2379'),
+('amcnees', 'seencma22356', 'Alysia', 'Mcnees', 'amcnees@csumb.edu', '(777) 345-2788'),
+('amitzel', 'leztima34984', 'Annamaria', 'Mitzel', 'amitzel@csumb.edu', '(125) 546-4478'),
 ('bgeiger', 'regiegb117', 'Brian', 'Geiger', 'bgeiger@csumb.edu', '(111) 111-1111'),
 ('bpeters', 'sretepb17748', 'Bill', 'Peters', 'bpeters@csumb.edu', '(123) 456-7890'),
+('cbaine', 'eniabc28888', 'Cristal', 'Baine', 'cbaine@csumb.edu', '(999) 325-7888'),
+('chaber', 'rebahc290', 'Corie', 'Haber', 'chaber@csumb.edu', '(444) 888-2222'),
+('drochelle', 'ellehcord23662', 'Desmond', 'Rochelle', 'drochelle@csumb.edu', '(167) 610-9543'),
+('dsedillo', 'ollidesd000', 'Devorah', 'Sedillo', 'dsedillo@csumb.edu', '(837) 789-4894'),
+('dstalling', 'gnillatsd23222', 'Dot', 'Stalling', 'dstalling@csumb.edu', '(665) 266-2888'),
+('dsuarez', 'zerausd9982', 'Darryl', 'Suarez', 'dsuarez@csumb.edu', '(777) 768-3867'),
+('eloucks', 'skcuole889', 'Evelynn', 'Loucks', 'eloucks@csumb.edu', '(888) 838-0900'),
+('ffinamore', 'eromaniff34637', 'Florance', 'Finamore', 'ffinamore@csumb.edu', '(666) 436-2673'),
+('fseabrooks', 'skoorbaesf1257', 'Fausto ', 'Seabrooks', 'fseabrooks@csumb.edu', '(232) 222-2664'),
 ('fyates', 'setayf111111111', 'Frank', 'Yates', 'fyates@csumb.edu', '(777) 777-7777'),
 ('goak', 'koag858585', 'Gary', 'Oak', 'goak@csumb.edu', '(999) 999-9999'),
 ('jdoe', 'eodenaj1234', 'Jane', 'Doe', 'jdoe@csumb.edu', '(222) 222-2222'),
 ('jodoe', 'eodoj686', 'John', 'Doe', 'jodoe@csumb.edu', '(333) 333-3333'),
+('kdamelio', 'oilemadk278945', 'Kasie', 'Damelio', 'kdamelio@csumb.edu', '(782) 375-2326'),
+('kector', 'rotcek39090', 'Kayleigh ', 'Ector', 'kector@csumb.edu', '(347) 265-2395'),
+('khill', 'llihk22346', 'Katrice', 'Hill ', 'khill@csumb.edu', '(236) 238-0330'),
+('lhiles', 'selihl22228', 'Long', 'Hiles', 'lhiles@csumb.edu', '(333) 345-1111'),
+('llarkey', 'yekrall238999', 'Lindsay', 'Larkey', 'llarkey@csumb.edu', '(671) 925-1352'),
+('loakes', 'sekaol2856', 'Leatha', 'Oakes', 'loakes@csumb.edu', '(235) 111-1111'),
+('loullette', 'ettelluol23477', 'Lavonna', 'Oullette', 'loullette@csumb.edu', '(226) 906-2721'),
 ('lwaters', 'sretawl2222', 'Lucy', 'Waters', 'lwaters@csumb.edu', '(888) 888-8888'),
+('lwiener', 'reneiwl23788', 'Lavonia', 'Wiener', 'lwiener@csumb.edu', '(630) 446-8851'),
+('mdahlquist', 'tsiuqlhadm3478', 'Merrie', 'Dahlquist', 'mdahlquist@csumb.edu', '(438) 815-0413'),
 ('mjohnson', 'nosnhojm876', 'Mike', 'Johnson', 'mjohnson@csumb.edu', '(444) 444-4444'),
+('mlatch', 'hctalm23266', 'Marlene', 'Latch', 'mlatch@csumb.edu', '(512) 174-0833'),
+('mloe', 'eolm23869', 'Maris', 'Loe', 'mloe@csumb.edu', '(267) 235-2111'),
+('ogalle', 'ellago2346778', 'Ozella', 'Galle', 'ogalle@csumb.edu', '(888) 483-8888'),
+('ohabib', 'bibaho7789', 'Obdulia', 'Habib', 'ohabib@csumb.edu', '(251) 546-9442'),
 ('ppark', 'karpp4321', 'Pat', 'Park', 'ppark@csumb.edu', '(666) 666-6666'),
-('slue', 'euls57857', 'Suzy', 'Lue', 'slue@csumb.edu', '(555) 555-5555');
+('pthai', 'iahtp21115', 'Pamila', 'Thai', 'pthai@csumb.edu', '(378) 346-3234'),
+('ralves', 'sevlar20003', 'Rory', 'Alves', 'ralves@csumb.edu', '(000) 235-8864'),
+('rhellen', 'nellehr39993', 'Roy', 'Hellen', 'rhellen@csumb.edu', '(333) 433-3888'),
+('slue', 'euls57857', 'Suzy', 'Lue', 'slue@csumb.edu', '(555) 555-5555'),
+('sschooley', 'yeloohcss23266267', 'Susannah', 'Schooley', 'sschooley@csumb.edu', '(306) 593-4623'),
+('zmayhew', 'wehyamz2437678', 'Zada', 'Mayhew', 'zmayhew@csumb.edu', '(723) 555-2962');
 
 -- --------------------------------------------------------
 
@@ -177,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `Product Type` (
   `productTypeID` int(11) NOT NULL AUTO_INCREMENT,
   `typeName` varchar(30) NOT NULL,
   PRIMARY KEY (`productTypeID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `Product Type`
@@ -191,7 +221,39 @@ INSERT INTO `Product Type` (`productTypeID`, `typeName`) VALUES
 (5, 'Mixed Media'),
 (6, 'Book'),
 (7, 'Reproduction Print'),
-(8, 'Lithograph');
+(8, 'Lithograph'),
+(9, 'Hand Pencil Drawing'),
+(10, 'Hand Colored Pencil'),
+(11, 'Ink Drawing'),
+(12, 'Marker Drawing'),
+(13, 'Chalk Art'),
+(14, 'Pastel Art'),
+(15, 'Watercolor'),
+(16, 'Acrylic'),
+(17, 'Oil '),
+(18, 'Film'),
+(19, 'Collage'),
+(20, 'Assemblage'),
+(21, 'Linocut Art'),
+(22, 'Wood Art'),
+(23, 'Etching'),
+(24, 'Pottery'),
+(25, 'China'),
+(26, 'Glaze'),
+(27, 'Airbrush'),
+(28, 'Crayon'),
+(29, 'Sand Art'),
+(30, 'Tempera'),
+(31, 'Coffee Art'),
+(32, 'Burned Paper Art'),
+(33, 'Digital Art'),
+(34, 'Animation'),
+(35, 'Stop Motion '),
+(36, 'Food Art'),
+(37, 'Recycled Art'),
+(38, 'Cement Art'),
+(39, 'Glass Art'),
+(40, 'Stone Art');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
