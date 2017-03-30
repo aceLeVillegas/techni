@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 11:58 PM
+-- Generation Time: Mar 30, 2017 at 12:13 AM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -96,7 +96,8 @@ CREATE TABLE IF NOT EXISTS `Order` (
   `orderDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `address` varchar(50) NOT NULL,
   `clientUserName` varchar(30) NOT NULL,
-  PRIMARY KEY (`orderID`)
+  PRIMARY KEY (`orderID`),
+  KEY `clientUserName` (`clientUserName`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
@@ -119,7 +120,8 @@ CREATE TABLE IF NOT EXISTS `Order Product` (
   `orderID` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `deliveryType` varchar(30) NOT NULL,
-  PRIMARY KEY (`productID`,`orderID`)
+  PRIMARY KEY (`productID`,`orderID`),
+  KEY `order ID` (`orderID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -149,7 +151,8 @@ CREATE TABLE IF NOT EXISTS `Product` (
   `artist` varchar(30) NOT NULL,
   `style` varchar(30) NOT NULL,
   `price` float NOT NULL,
-  PRIMARY KEY (`productID`)
+  PRIMARY KEY (`productID`),
+  KEY `productTypeID` (`productTypeID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
@@ -254,6 +257,29 @@ INSERT INTO `Product Type` (`productTypeID`, `typeName`) VALUES
 (38, 'Cement Art'),
 (39, 'Glass Art'),
 (40, 'Stone Art');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Order`
+--
+ALTER TABLE `Order`
+  ADD CONSTRAINT `clientname` FOREIGN KEY (`clientUserName`) REFERENCES `Client` (`username`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `Order Product`
+--
+ALTER TABLE `Order Product`
+  ADD CONSTRAINT `order ID` FOREIGN KEY (`orderID`) REFERENCES `Order` (`orderID`) ON DELETE NO ACTION,
+  ADD CONSTRAINT `product ID` FOREIGN KEY (`productID`) REFERENCES `Product` (`productID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `Product`
+--
+ALTER TABLE `Product`
+  ADD CONSTRAINT `product type ID` FOREIGN KEY (`productTypeID`) REFERENCES `Product Type` (`productTypeID`) ON DELETE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
