@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -14,9 +18,7 @@
     <!-- This is the search bar on top of the page -->
     <div id="topDiv">
         <div style="margin:0px padding:0px">
-            <form  action="returnData.php" method="post" name="data">
-                Techni <input type="text" name="userName"/><input class="search" type="image" src="images/busca.png" alt="Submit">
-            </form>
+            <h1>Techni - The Online Art Gallery</h1>
         </div>
     </div>
     
@@ -24,11 +26,11 @@
     <div class = "categories">
         <ul class="menu">
             <li><a class="visited" href="#">Main Page</a></li>
-            <li><a class="none" href="page2.php?artWork=1">Painting</a></li>
-            <li><a class="none" href="page2.php?artWork=2">Sculptures</a></li>
-            <li><a class="none" href="page2.php?artWork=3">Photography</a></li>
-            <li><a class="none" href="page2.php?artWork=4">Gift Cards</a></li>
-            <li><a class="none" href="page2.php?artWork=5">Mixed Media</a></li>            
+            <li><a class="none" href="painting.php?artWork=1">Painting</a></li>
+            <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
+            <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
+            <li><a class="none" href="gift.php?artWork=4">Gift Cards</a></li>
+            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>            
         </ul>
     </div>
     
