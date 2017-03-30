@@ -1,11 +1,4 @@
-<?php
 
-
-if(isset($_GET['artWork']) ){
-echo $_GET['artWork'];
-
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +27,7 @@ echo $_GET['artWork'];
             <li><a class="none" href="painting.php?artWork=1">Painting</a></li>
             <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
             <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
-            <li><a class="none" href="gift.php?artWork=4">Gift Cards</a></li>
+            <li><a class="none" href="book.php?artWork=6">Books</a></li>
             <li><a class="visited" href="mixed.php?artWork=5">Mixed Media</a></li>             
         </ul>
     </div>
@@ -47,35 +40,86 @@ echo $_GET['artWork'];
            <h3> Select From the Following Filters </h3>
            <form class="info" action="practice_program1.php" method="post" name="data">
          
-         <br>  <select class = "select" name="artist" value="">
-                <option value="0">Artist</option>
-                <option value="7">7X7</option>
-                <option value="8">8X8</option>
-                <option value="9">9X9</option>
-                <option value="10">10X10</option>
-              
-        </select>
-            <br> <br> <select class = "select" name="style" value="">
-                <option value="0">Style</option>
-                <option value="7">7X7</option>
-                <option value="8">8X8</option>
-                <option value="9">9X9</option>
-                <option value="10">10X10</option>
-                </select>
-                <br>
+<?php
+
+
+if(isset($_GET['artWork']) ){
+       // Set the Cloud 9 MySQL related information...this is set in stone by C9!
+    $servername = getenv('IP');
+    $dbPort = 3306;
+    
+    // Which database (the name of the database in phpMyAdmin)?
+    $database = "techni";
+    
+    // My user information...I could have prompted for password, as well, or stored in the
+    // environment, or, or, or (all in the name of better security)
+    $username = getenv('C9_USER');
+    $password = "";
+    
+    
+    // Establish the connection and then alter how we are tracking errors (look those keywords up)
+    $dbConn = new PDO("mysql:host=$servername;port=$dbPort;dbname=$database", $username, $password);
+    $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+
+    
+      $whereSql = "SELECT P.artist, P.productTypeID
+                    FROM Product P
+                    WHERE P.productTypeID = ".$_GET['artWork']."
+                    GROUP BY P.artist";
         
-            <br>  <select class = "select" name="period" value="">
-                <option value="0">Period</option>
-                <option value="7">7X7</option>
-                <option value="8">8X8</option>
-                <option value="9">9X9</option>
-                <option value="10">10X10</option>
+        // The prepare caches the SQL statement for N number of parameters imploded above
+        $whereStmt = $dbConn->prepare($whereSql);
+        
+        $whereStmt->execute();
+        
+        echo "<br>  <select class = \"select\" name=\"artist\" >";
+        echo "<option value=\"0\">Artist</option>";
+        while ($whereRow = $whereStmt->fetch(PDO::FETCH_ASSOC))  {
+
+            echo " <option value=\"" . $whereRow['artist'] . "\">" . $whereRow['artist'] . "</option>";
+              
+        }
+
+    echo "</select>";
+
+
+    $whereSql = "SELECT P.style, P.productTypeID
+                    FROM Product P
+                    WHERE P.productTypeID = ".$_GET['artWork']."
+                    GROUP BY P.style";
+        
+        // The prepare caches the SQL statement for N number of parameters imploded above
+        $whereStmt = $dbConn->prepare($whereSql);
+        
+        $whereStmt->execute();
+        
+        echo "<br> <br> <select class = \"select\" name=\"style\" >";
+        echo "<option value=\"0\">Style</option>";
+        while ($whereRow = $whereStmt->fetch(PDO::FETCH_ASSOC))  {
+
+            echo " <option value=\"" . $whereRow['style'] . "\">" . $whereRow['style'] . "</option>";
+              
+        }
+        echo "</select>";
+            
+                
+}
+?> 
+           <br><br>  <select class = "select" name="range" value="">
+                <option value="10000000000">Max Price</option>
+                <option value="1000000000">1000000000</option>
+                <option value="100000000">100000000</option>
+                <option value="10000000">10000000</option>
+                <option value="1000000">1000000</option>
+                <option value="100000">100000</option>
+                <option value="10000">10000</option>
                 </select>
                 <br><br>
+
         Sort by Price <input  type="radio" name="asc" value="1"> Ascending 
         <input class="radio" type="radio" name="desc" value="2"> Descending
         <br>    
-        <br><input type="submit" value="Submit">
+        <br><input type="submit" value="Submit" name ="submit">
         </div>
         </form>   
       </div>

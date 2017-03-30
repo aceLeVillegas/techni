@@ -29,7 +29,7 @@ session_start();
             <li><a class="none" href="painting.php?artWork=1">Painting</a></li>
             <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
             <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
-            <li><a class="none" href="gift.php?artWork=4">Gift Cards</a></li>
+            <li><a class="none" href="book.php?artWork=6">Books</a></li>
             <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>            
         </ul>
     </div>

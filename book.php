@@ -1,4 +1,4 @@
- 
+
 
 <!DOCTYPE html>
 <html>
@@ -25,10 +25,10 @@
         <ul class="menu">
             <li><a class="none" href="mainPage.php">Main Page</a></li>
             <li><a class="none" href="painting.php?artWork=1">Painting</a></li>
-            <li><a class="visited" href="sculpture.php?artWork=2">Sculptures</a></li>
+            <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
             <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
-            <li><a class="none" href="book.php?artWork=6">Books</a></li>
-            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>           
+            <li><a class="visited" href="book.php?artWork=6">Books</a></li>
+            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>            
         </ul>
     </div>
     
@@ -39,8 +39,7 @@
       <div id="filters">
            <h3> Select From the Following Filters </h3>
            <form class="info" action="practice_program1.php" method="post" name="data">
-         
-         
+          
 <?php
 
 
@@ -107,13 +106,13 @@ if(isset($_GET['artWork']) ){
 }
 ?> 
            <br><br>  <select class = "select" name="range" value="">
-                <option value="10000000000">Max Price</option>
-                <option value="1000000000">1000000000</option>
-                <option value="100000000">100000000</option>
-                <option value="10000000">10000000</option>
-                <option value="1000000">1000000</option>
-                <option value="100000">100000</option>
-                <option value="10000">10000</option>
+                <option value="1000">Max Price</option>
+                <option value="500">500</option>
+                <option value="400">400</option>
+                <option value="300">300</option>
+                <option value="200">200</option>
+                <option value="100">100</option>
+                <option value="50">50</option>
                 </select>
                 <br><br>
 
