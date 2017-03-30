@@ -37,6 +37,7 @@
       <!-- Filters -->
       <div id="filters">
            <h3> Select From the Following Filters </h3>
+
            <form class="info" action="practice_program1.php" method="post" name="data">
           
 <?php
@@ -76,6 +77,7 @@ if(isset($_GET['artWork']) ){
         while ($whereRow = $whereStmt->fetch(PDO::FETCH_ASSOC))  {
 
             echo " <option value=\"" . $whereRow['artist'] . "\">" . $whereRow['artist'] . "</option>";
+
               
         }
 
