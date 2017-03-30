@@ -21,53 +21,48 @@
 // Sculpture
 // Mixed Media 
 
-    $narrorTable = $narrorDown; 
+    $narrowTable = $narrowDown; 
 
     $artWork = $_GET["artWork"];
 
     function findTypeTable($artWork, $dbConn){
         
-        $narrorDown = "SELECT ProductType.productType, Product.productName 
-                            FROM ProductType 
-                            RIGHT JOIN Product
-                            ON $artWork = Product.productTypeId 
-                            ORDER BY Product.productName"; 
-                            
-                            
+        $artwork = 3;
+        $artwork = intval($artwork); //must explicitly typecast to int to use number variable in SQL statement
         
+        //for string variables do this:
+        // $type     = 'testing';
+        // $type     = mysql_real_escape_string($type);
         
-        // returns the new narrored list of 
-        return $narrorDown; 
+        $narrowDown = "SELECT Product.productName, `Product Type`.typeName 
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.productTypeID = $artwork
+                       ORDER BY `Product`.productName";
+
+        // returns the new narrowed down list of art
+        return $narrowDown; 
         
     }
     
     
-    $narror = findTypeTable($artWork, $dbConn);
-    $narState = $dbConn->prepare($narror);
-    $narState->execute();
+    $narrow = findTypeTable($artWork, $dbConn);
+    $statement = $dbConn->prepare($narrow);
+    $statement->execute();
     
     
-    echo "<div style = \" width: 500px; height: 600;\">"; 
-                echo "<table class= \"chart\">
-                        <tr class = \"header\">
-                        <th colspan = \"3\" class = \"header\">Types of Products</td>
-                        </tr>
-                        <tr class = \"header\">
-                            <th>Product Type</th>
-                            <th>Number Of Products</th>
-                        </tr>"; 
-                
-                // Don't return the indexed values, just the associative
-                while ($narrorw = $narState->fetch(PDO::FETCH_ASSOC)){
-                    // var_dump($whereInRow); 
-                    echo "<tr  colspan = \"2\">";
-                    
-                    echo "<td>" .   $narror['productType'] . "</td>" .
-                    "<td>" .  $narror['productName '] . "</td>";
-                        
-                    echo "</tr>"; 
-                }
-
+    echo "<table>";
+            echo "<tr>" . "<td>" . "TYPE" . "</td>" . "<td>" . "PRODUCT" . "</td>" . "</tr>";
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
+            {
+                echo "<tr>";
+                    echo "<td>" . $row["typeName"] . "</td>";
+                    echo "<td>" . $row["productName"] . "</td>";
+                echo "</tr>";
+            }
+    echo "</table>";
+    
     // function findYear($narrorTable){
         
     //     global $narrorTable; 

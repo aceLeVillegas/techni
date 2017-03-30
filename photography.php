@@ -45,7 +45,7 @@ echo $_GET['artWork'];
       <!-- Filters -->
       <div id="filters">
            <h3> Select From the Following Filters </h3>
-           <form class="info" action="practice_program1.php" method="post" name="data">
+           <form class="info" action="photography.php" method="post" name="data">
          
          <br>  <select class = "select" name="artist" value="">
                 <option value="0">Artist</option>
