@@ -19,10 +19,15 @@
 // Sculpture
 // Mixed Media 
 
+<<<<<<< HEAD
    // $narrorTable = $narrorDown; 
+=======
+    $narrowTable = $narrowDown; 
+>>>>>>> a139bdc2d00b20f095735d8ae26dd3ed5123511c
 
     $artWork = 3;
 
+<<<<<<< HEAD
     //function findTypeTable($artWork, $dbConn){
         
     $narrorDown = "select productName, typeName 
@@ -56,6 +61,46 @@
         
     }
                 
+=======
+    function findTypeTable($artWork, $dbConn){
+        
+        $artwork = 3;
+        $artwork = intval($artwork); //must explicitly typecast to int to use number variable in SQL statement
+        
+        //for string variables do this:
+        // $type     = 'testing';
+        // $type     = mysql_real_escape_string($type);
+        
+        $narrowDown = "SELECT Product.productName, `Product Type`.typeName 
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.productTypeID = $artwork
+                       ORDER BY `Product`.productName";
+
+        // returns the new narrowed down list of art
+        return $narrowDown; 
+        
+    }
+    
+    
+    $narrow = findTypeTable($artWork, $dbConn);
+    $statement = $dbConn->prepare($narrow);
+    $statement->execute();
+    
+    
+    echo "<table>";
+            echo "<tr>" . "<td>" . "TYPE" . "</td>" . "<td>" . "PRODUCT" . "</td>" . "</tr>";
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
+            {
+                echo "<tr>";
+                    echo "<td>" . $row["typeName"] . "</td>";
+                    echo "<td>" . $row["productName"] . "</td>";
+                echo "</tr>";
+            }
+    echo "</table>";
+    
+>>>>>>> a139bdc2d00b20f095735d8ae26dd3ed5123511c
     // function findYear($narrorTable){
         
     //     global $narrorTable; 
