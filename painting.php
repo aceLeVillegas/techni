@@ -38,7 +38,7 @@
       <!-- Filters -->
       <div id="filters">
            <h3> Select From the Following Filters </h3>
-           <form class="info" action="practice_program1.php" method="post" name="data">
+           <form class="info" action="SearchingTechni.php" method="post" name="data">
 <?php
 
 
@@ -113,7 +113,7 @@ if(isset($_GET['artWork']) ){
              $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
              if (in_array($ext, $supported_file)) {
                  echo "<div id=\"slider2\">";
-                 echo '<img  style= "width:100%;" height = "100%;" src="'.$image .'" alt="Random image" />'."<br /><br />";
+                 echo '<img  style= "width:100%;" height = "100%;" src="'.$image .'"/>'."<br /><br />";
                  echo "</div>";
                 } else {
                     continue;

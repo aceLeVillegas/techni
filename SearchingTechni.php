@@ -4,7 +4,7 @@
 
     $servername = getenv('IP');
     $dbPort = 3306;
-    $database = "Techni"; 
+    $database = "techni"; 
     $username = getenv('C9_USER');
     $password = "";
     $dbConn = new PDO("mysql:host=$servername;port=$dbPort;dbname=$database", $username, $password);
@@ -45,7 +45,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -72,7 +72,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -100,7 +100,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -127,7 +127,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -156,7 +156,7 @@
                        "ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -184,7 +184,7 @@
                        "ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -212,7 +212,7 @@
                        "ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){

@@ -38,7 +38,7 @@
       <!-- Filters -->
       <div id="filters">
            <h3> Select From the Following Filters </h3>
-           <form class="info" action="practice_program1.php" method="post" name="data">
+           <form class="info" action="SearchingTechni.php" method="post" name="data">
           
 <?php
 
