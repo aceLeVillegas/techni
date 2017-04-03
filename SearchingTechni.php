@@ -109,17 +109,18 @@
                 
             }
             
-            
         }
-        
-        $narrowDown = "SELECT Product.productID
+        else{
+            
+            $narrowDown = "SELECT Product.productID
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
                        WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] . "' AND Product.style = '" . $_POST["style"] .
                        "' ORDER BY `Product`.productName";
+        }
         
-        
+       
         $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
@@ -170,14 +171,41 @@
         
         //echo "Function 3 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        if(isset($_POST["direction"])){
+            
+            if($_POST["direction"] == "a"){
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] .
+                       "' ORDER BY `Product`.price ASC";
+                
+            }
+            else{
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] .
+                       "' ORDER BY `Product`.price DESC";
+                
+            }
+            
+        }
+        else{
+            
+            $narrowDown = "SELECT Product.productID
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
                        WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] . 
                        "' ORDER BY `Product`.productName";
-        
-        
+            
+        }
+
         $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
@@ -199,13 +227,39 @@
         
         //echo "Function 4 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        if(isset($_POST["direction"])){
+            
+            if($_POST["direction"] == "a"){
+                
+               $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["style"] . "' AND Product.price <= '" . $_POST["range"] . 
+                       "' ORDER BY `Product`.price ASC";
+                
+            }
+            else{
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["style"] . "' AND Product.price <= '" . $_POST["range"] . 
+                       "' ORDER BY `Product`.price DESC";
+                
+            }
+            
+        }
+        else{
+            
+            $narrowDown = "SELECT Product.productID
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
                        WHERE Product.artist = '" . $_POST["style"] . "' AND Product.price <= '" . $_POST["range"] . 
                        "' ORDER BY `Product`.productName";
-        
+        }
         
         $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
@@ -289,14 +343,41 @@
         
         //echo "Function 7 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        if(isset($_POST["direction"])){
+            
+            if($_POST["direction"] == "a"){
+                
+               $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.price = '" . $_POST["range"] . 
+                       "' ORDER BY `Product`.price ASC";
+                
+            }
+            else{
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.price = '" . $_POST["range"] . 
+                       "' ORDER BY `Product`.price DESC";
+                
+            }
+            
+        }
+        else{
+            
+            $narrowDown = "SELECT Product.productID
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
                        WHERE Product.price = '" . $_POST["range"] . 
                        "' ORDER BY `Product`.productName";
         
-        
+        }
+    
         $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
