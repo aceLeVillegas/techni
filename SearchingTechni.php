@@ -86,6 +86,32 @@
         
         //echo "Function 1 start. <br>";
         
+        if(isset($_POST["direction"])){
+            
+            if($_POST["direction"] == "a"){
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] . "' AND Product.style = '" . $_POST["style"] .
+                       "' ORDER BY `Product`.price ASC";
+                
+            }
+            else{
+                
+                $narrowDown = "SELECT Product.productID
+                       FROM Product 
+                       INNER JOIN `Product Type` 
+                       ON `Product Type`.productTypeID = Product.productTypeID 
+                       WHERE Product.artist = '" . $_POST["artist"] . "' AND Product.price <= '" . $_POST["range"] . "' AND Product.style = '" . $_POST["style"] .
+                       "' ORDER BY `Product`.price DESC";
+                
+            }
+            
+            
+        }
+        
         $narrowDown = "SELECT Product.productID
                        FROM Product 
                        INNER JOIN `Product Type` 
