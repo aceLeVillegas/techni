@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Techni</title>
+     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+    
+    <!-- This is the search bar on top of the page -->
+    <div id="topDiv">
+        <div style="margin:0px padding:0px">
+            <h1>Techni - The Online Art Gallery</h1>
+        </div>
+    </div>
+    
+    <!-- This will be the bar with the categories -->
+    <div class = "categories">
+        <ul class="menu">
+            <li><a class="none" href="mainPage.php">Main Page</a></li>
+            <li><a class="visited" href="painting.php?artWork=1">Painting</a></li>
+            <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
+            <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
+            <li><a class="none" href="book.php?artWork=6">Books</a></li>
+            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>         
+        </ul>
+    </div>
+    
+    <!-- This is the main gallery -->
+    <div id="content">
+      
+      <!-- Filters -->
+      <div id="filters">
+           <h3> Select From the Following Filters </h3>
+           <form class="info" action="SearchingTechni.php" method="post" name="data">
+
+
 <?php
 
 
@@ -9,6 +50,11 @@
     $password = "";
     $dbConn = new PDO("mysql:host=$servername;port=$dbPort;dbname=$database", $username, $password);
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    
+    
+    // echo "Artist: " . $_POST["artist"] . "<br>" . 
+    //     "Style: " . $_POST["style"] . "<br>" . 
+    //     "Range: ". $_POST["range"] . "<br>"; 
 
     $productImgs = array(1 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/1.jpg\"></img></div>",
                         2 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/2.jpg\"></img></div>", 
@@ -33,7 +79,12 @@
                         21 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/busca.png\"></img></div>",
                         22 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/gift.png\"></img></div>"); 
     
-    if(isset($_POST["artist"]) && isset($_POST["style"]) && isset($_POST["range"])){
+
+    
+    
+    if((isset($_POST["artist"]) && $_POST["artist"] != "0") && (isset($_POST["style"]) && $_POST["style"] != "0") && (isset($_POST["range"]) && $_POST["range"] != "0")){
+        
+        //echo "Function 1 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -48,7 +99,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -59,7 +110,9 @@
             }// end of foreach 
         }// end of while 
     }
-    else if(isset($_POST["artist"]) && isset($_POST["style"])){
+    if((isset($_POST["artist"]) && $_POST["artist"] != "0") && (isset($_POST["style"]) && $_POST["style"] != "0")){
+        
+        //echo "Function 2 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -74,7 +127,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -87,7 +140,9 @@
         }// end of while 
         
     }
-    else if(isset($_POST["artist"]) && isset($_POST["range"])){
+    else if((isset($_POST["artist"]) && $_POST["artist"] != "0") && (isset($_POST["range"]) && $_POST["range"] != "0") ){
+        
+        //echo "Function 3 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -102,7 +157,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -114,7 +169,9 @@
 
         }// end of while 
     }
-    else if(isset($_POST["style"]) && isset($_POST["range"])){
+    else if( (isset($_POST["style"]) &&  $_POST["style"] != "0" ) && (isset($_POST["range"]) && $_POST["range"] != "0") ){
+        
+        //echo "Function 4 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -129,7 +186,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -142,8 +199,9 @@
         }// end of while 
         
     }
-    else if(isset($_POST["artist"])){
+    else if(isset($_POST["artist"])  && $_POST["artist"] != "0"){
         
+        //echo "Function 5 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -158,7 +216,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -171,7 +229,9 @@
         }// end of while 
     
     }// end of if 
-    else if(isset($_POST["style"])){
+    else if(isset($_POST["style"]) && $_POST["style"] != "0"){
+        
+        //echo "Function 6 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -186,7 +246,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -199,7 +259,9 @@
         }// end of while 
         
     }
-    else if(isset($_POST["range"])){
+    else if(isset($_POST["range"]) && $_POST["range"] != "0" ){
+        
+        //echo "Function 7 start. <br>";
         
         $narrowDown = "SELECT Product.productID
                        FROM Product 
@@ -214,7 +276,7 @@
         
         while ($na = $narState->fetch()){
             
-            foreach(  $productImg as $key => $value){
+            foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
@@ -226,44 +288,12 @@
 
         }// end of while 
     }
-                
-
-    // function findTypeTable($artWork, $dbConn){
-        
-    //     $artwork = 3;
-    //     $artwork = intval($artwork); //must explicitly typecast to int to use number variable in SQL statement
-        
-    //     //for string variables do this:
-    //     // $type     = 'testing';
-    //     // $type     = mysql_real_escape_string($type);
-        
-    //     $narrowDown = "SELECT Product.productID
-    //                   FROM Product 
-    //                   INNER JOIN `Product Type` 
-    //                   ON `Product Type`.productTypeID = Product.productTypeID 
-    //                   WHERE Product.productTypeID = $artwork
-    //                   ORDER BY `Product`.productName";
-
-    //     // returns the new narrowed down list of art
-    //     return $narrowDown; 
-        
-    // }
-    
-    
-    // $narrow = findTypeTable($artWork, $dbConn);
-    // $statement = $dbConn->prepare($narrow);
-    // $statement->execute();
-    
-    
-    // echo "<table>";
-    //         echo "<tr>" . "<td>" . "TYPE" . "</td>" . "<td>" . "PRODUCT" . "</td>" . "</tr>";
-    //         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
-    //         {
-    //             echo "<tr>";
-    //                 echo "<td>" . $row["typeName"] . "</td>";
-    //                 echo "<td>" . $row["productName"] . "</td>";
-    //             echo "</tr>";
-    //         }
-    // echo "</table>";
 
 ?>
+
+</div>
+    
+    
+</body>
+
+</html>

@@ -130,7 +130,7 @@ if(isset($_GET['artWork']) ){
 ?>                
         
             <br><br>  <select class = "select" name="range" value="">
-                <option value="10000000000">Max Price</option>
+                <option value="0">Max Price</option>
                 <option value="1000000000">1000000000</option>
                 <option value="100000000">100000000</option>
                 <option value="10000000">10000000</option>
