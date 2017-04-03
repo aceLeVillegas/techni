@@ -43,7 +43,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
