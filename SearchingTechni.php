@@ -4,13 +4,11 @@
 
     $servername = getenv('IP');
     $dbPort = 3306;
-    $database = "Techni"; 
+    $database = "techni"; 
     $username = getenv('C9_USER');
     $password = "";
     $dbConn = new PDO("mysql:host=$servername;port=$dbPort;dbname=$database", $username, $password);
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-    
-    $artWork = 3;
 
     $productImgs = array(1 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/1.jpg\"></img></div>",
                         2 => "<div id=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/2.jpg\"></img></div>", 
@@ -57,9 +55,8 @@
                     echo $value; 
                     
                 }
-                
+          
             }// end of foreach 
-
         }// end of while 
     }
     else if(isset($_POST["artist"]) && isset($_POST["style"])){
@@ -72,7 +69,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -100,7 +97,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -127,7 +124,7 @@
                        "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -152,11 +149,11 @@
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
-                       WHERE Product.artist = " . $_POST["artist"] . 
-                       "ORDER BY `Product`.productName";
+                       WHERE Product.artist = '" . $_POST["artist"] . 
+                       "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -180,11 +177,11 @@
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
-                       WHERE Product.style = " . $_POST["style"] . 
-                       "ORDER BY `Product`.productName";
+                       WHERE Product.style = '" . $_POST["style"] . 
+                       "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -208,11 +205,11 @@
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
-                       WHERE Product.price = " . $_POST["range"] . 
-                       "ORDER BY `Product`.productName";
+                       WHERE Product.price = '" . $_POST["range"] . 
+                       "' ORDER BY `Product`.productName";
         
         
-        $narState = $dbConn->prepare($narrorDown);
+        $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
         while ($na = $narState->fetch()){
@@ -268,26 +265,5 @@
     //             echo "</tr>";
     //         }
     // echo "</table>";
-    
-
-    // function findYear($narrorTable){
-        
-    //     global $narrorTable; 
-        
-    // }
-    
-    // function findArtist($narrorTable){
-        
-    //     global $narrorTable; 
-    // }
-    
-    // function findStyle($narrorTable){
-        
-    //     global $narrorTable; 
-    // }
-    // function findPrices($narrorTable){
-        
-    //     global $narrorTable; 
-    // }
 
 ?>
