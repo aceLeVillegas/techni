@@ -106,7 +106,7 @@ if(isset($_GET['artWork']) ){
 }
 ?> 
            <br><br>  <select class = "select" name="range" value="">
-                <option value="1000">Max Price</option>
+                <option value="0">Max Price</option>
                 <option value="500">500</option>
                 <option value="400">400</option>
                 <option value="300">300</option>
@@ -116,8 +116,8 @@ if(isset($_GET['artWork']) ){
                 </select>
                 <br><br>
 
-        Sort by Price <input  type="radio" name="asc" value="1"> Ascending 
-        <input class="radio" type="radio" name="desc" value="2"> Descending
+        Sort by Price <input  type="radio" name="direction" value="a"> Ascending 
+        <input class="radio" type="radio" name="direction" value="d"> Descending
         <br>    
         <br><input type="submit" value="Submit" name ="submit">
         </div>

@@ -140,8 +140,8 @@ if(isset($_GET['artWork']) ){
                 </select>
                 <br><br>
 
-        Sort by Price <input  type="radio" name="asc" value="1"> Ascending 
-        <input class="radio" type="radio" name="desc" value="2"> Descending
+        Sort by Price <input  type="radio" name="direction" value="a"> Ascending 
+        <input class="radio" type="radio" name="direction" value="d"> Descending
         <br>    
         <br><input type="submit" value="Submit" name ="submit">
         </div>
