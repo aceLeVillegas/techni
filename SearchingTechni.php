@@ -90,7 +90,7 @@
             
             if($_POST["direction"] == "a"){
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*  
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -100,7 +100,7 @@
             }
             else{
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -112,7 +112,7 @@
         }
         else{
             
-            $narrowDown = "SELECT Product.productID
+            $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -141,7 +141,7 @@
         
         //echo "Function 2 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -175,7 +175,7 @@
             
             if($_POST["direction"] == "a"){
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -185,7 +185,7 @@
             }
             else{
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -197,7 +197,7 @@
         }
         else{
             
-            $narrowDown = "SELECT Product.productID
+            $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -231,7 +231,7 @@
             
             if($_POST["direction"] == "a"){
                 
-               $narrowDown = "SELECT Product.productID
+               $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -241,7 +241,7 @@
             }
             else{
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -253,7 +253,7 @@
         }
         else{
             
-            $narrowDown = "SELECT Product.productID
+            $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -283,7 +283,7 @@
         
         //echo "Function 5 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -313,7 +313,7 @@
         
         //echo "Function 6 start. <br>";
         
-        $narrowDown = "SELECT Product.productID
+        $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -347,7 +347,7 @@
             
             if($_POST["direction"] == "a"){
                 
-               $narrowDown = "SELECT Product.productID
+               $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -357,7 +357,7 @@
             }
             else{
                 
-                $narrowDown = "SELECT Product.productID
+                $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
@@ -369,7 +369,7 @@
         }
         else{
             
-            $narrowDown = "SELECT Product.productID
+            $narrowDown = "SELECT Product.*
                        FROM Product 
                        INNER JOIN `Product Type` 
                        ON `Product Type`.productTypeID = Product.productTypeID 
