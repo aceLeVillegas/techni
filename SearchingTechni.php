@@ -35,7 +35,7 @@
       
       <!-- Filters -->
       <div id="filters">
-           <h3> Select From the Following Filters </h3>
+           <h3> These Are the Results: </h3>
            <form class="info" action="SearchingTechni.php" method="post" name="data">
 
 
