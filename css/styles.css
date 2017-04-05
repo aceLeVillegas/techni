@@ -166,6 +166,11 @@ a:hover{
    height: 620px;
 }
 
+#mask2 {
+   overflow: hidden;
+   height: 220px;
+}
+
 /* IMAGE LIST */
 
 #slider ul {

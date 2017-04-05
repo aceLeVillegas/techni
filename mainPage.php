@@ -25,7 +25,7 @@ session_start();
     <!-- This will be the bar with the categories -->
     <div class = "categories">
         <ul class="menu">
-            <li><a class="visited" href="#">Main Page</a></li>
+            <li><a class="visited" href="mainPage.php">Main Page</a></li>
             <li><a class="none" href="painting.php?artWork=1">Painting</a></li>
             <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
             <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
