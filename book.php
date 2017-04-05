@@ -127,28 +127,57 @@ if(isset($_GET['artWork']) ){
       
        <?php
        
-           
+        $productImgs = array(1 => "<div id=\"1\" class=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/1.jpg\"></img></div>",
+                        2 => "<div id=\"2\" class=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/2.jpg\"></img></div>", 
+                        3 => "<div id=\"3\" class=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/3.jpg\"></img></div>", 
+                        4 => "<div id=\"4\" class=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/4.jpg\"></img></div>", 
+                        5 => "<div id=\"5\" class=\"slider2\"><img style= \"width:100%; height = 100%;\" src=\"images/5.jpg\" class=\"slider2\"></img></div>",
+                        6 => "<div id=\"6\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/6.jpg\"></img></div>",
+                        7 => "<div id=\"7\"  class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/7.png\"></img></div>",
+                        8 => "<div id=\"8\"  class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/8.jpg\"></img></div>",
+                        9 => "<div id=\"9\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/9.jpg\"></img></div>",
+                        10 => "<div id=\"10\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/10.jpg\"></img></div>", 
+                        11 => "<div id=\"11\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/11.jpg\"></img></div>",
+                        12 => "<div id=\"12\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/12.jpg\"></img></div>", 
+                        13 => "<div id=\"13\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/13.jpg\"></img></div>",
+                        14 => "<div id=\"14\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/14.jpg\"></img></div>", 
+                        15 => "<div id=\"15\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/15.jpg\"></img></div>",
+                        16 => "<div id=\"16\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/16.jpg\"></img></div>", 
+                        17 => "<div id=\"17\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/17.jpg\"></img></div>", 
+                        18 => "<div id=\"18\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/18.jpg\"></img></div>", 
+                        19 => "<div id=\"19\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/19.jpg\"></img></div>", 
+                        20 => "<div id=\"20\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/20.jpg\"></img></div>", 
+                        21 => "<div id=\"21\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/busca.png\"></img></div>",
+                        22 => "<div id=\"22\" class=\"slider2\" ><img style= \"width:100%; height = 100%;\" src=\"images/gift.png\"></img></div>"); 
+       
+      if(isset($_GET["artWork"])){
+        
+        //echo "Function 5 start. <br>";
+        
+        $narrowDown = "SELECT Product.*
+                      FROM Product 
+                      WHERE Product.productTypeID = '" . $_GET["artWork"] . 
+                      "' ORDER BY `Product`.productName";
+        
+        
+        $narState = $dbConn->prepare($narrowDown);
+        $narState->execute();
+        
+        while ($na = $narState->fetch()){
             
-     $files = glob("images/*.*");
-     for ($i=1; $i<10; $i++)
-      {
-        $image = $files[$i];
-        $supported_file = array(
-                'gif',
-                'jpg',
-                'jpeg',
-                'png'
-         );
+            foreach($productImgs as $key => $value){
+                
+                if($na['productID'] == $key){
+                    
+                    echo $value; 
+                    
+                }
+                
+            }// end of foreach 
 
-         $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-         if (in_array($ext, $supported_file)) {
-             echo "<div id=\"slider2\">";
-             echo '<img  style= "width:100%;" height = "100%;" src="'.$image .'" alt="Random image" />'."<br /><br />";
-             echo "</div>";
-            } else {
-                continue;
-            }
-     }
+        }// end of while 
+    
+    }// end of if 
     
     ?>
    </div>
