@@ -280,7 +280,7 @@ a:hover{
    width: 220px;
 }
 
-#slider2 {
+.slider2 {
    background: #000;
    border: 5px solid #eaeaea;
    box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
