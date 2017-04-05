@@ -28,7 +28,8 @@
             <li><a class="none" href="sculpture.php?artWork=2">Sculptures</a></li>
             <li><a class="none" href="photography.php?artWork=3">Photography</a></li>
             <li><a class="none" href="book.php?artWork=6">Books</a></li>
-            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li>         
+            <li><a class="none" href="mixed.php?artWork=5">Mixed Media</a></li> 
+            <li><a  href="Cart.php" ><img src="images/cart.png" style= "height: 25px; width: 25px; "/></a></li>
         </ul>
     </div>
     
@@ -167,7 +168,7 @@ if(isset($_GET['artWork']) ){
          $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
          if (in_array($ext, $supported_file)) {
              echo "<div id=\"slider2\">";
-             echo '<img  style= "width:100%;" height = "100%;" src="'.$image .'" />'."<br /><br />";
+             echo '<img  style= "width:100%;" height = "100%;" src="'.$image .'"  />'."<br /><br />";
              echo "</div>";
             } else {
                 continue;
