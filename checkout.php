@@ -45,42 +45,7 @@
 
     $grandTotal = 0; 
 
-    //add to cart button is pressed
-    if(!isset($_POST["addCart"])){
-        
-        $_SESSION["cart"] = array(); 
-        $_SESSION["total"] = array();
-    }
-    if(isset($_POST["addCart"])){
-        // pushes in the products id 
-        // $_POST["addChart"]  == productID
-        
-        $price = "SELECT price, productName 
-                    FROM `Product`
-                    WHERE '" . $_POST["addCart"] . "' = productID"; 
-        
-        $priceState = $dbConn->prepare($price);
-        $priceState->execute();
-        $productPrice = $priceState->fetch();
-        
-        echo "Price: " . $productPrice["price"] . var_dump($productPrice["price"]) . "<br>Name: " . $productPrice["productName"] . var_dump($productPrice["productName"]) . "<br>";
- 
-        array_push($_SESSION["cart"], $productPrice["productName"]);
-        array_push($_SESSION["total"], $productPrice["price"]);
-        
-        foreach($_SESSION["total"] as $key => $value){
-            var_dump($value);
-            echo "<br>";
-            
-        }
-        foreach($_SESSION["cart"] as $key => $value){
-            var_dump($value);
-            echo "<br>";
-            
-        }
     
-        
-    }
     // when the order button is pressed 
     if(isset($_POST["ordered"])){
         
@@ -151,16 +116,6 @@
             
         }
        }
-    echo " </table>";
-      echo "   </div>";
-    echo "<form class=\"info\" action=\"checkout.php\" method=\"post\" name=\"data\">
-        Shipping Options <input  type=\"radio\" name=\"ship\" value=\"1\"> FedEx 2-Day 
-        <input class=\"radio\" type=\"radio\" name=\"ship\" value=\"3\"> FedEx Next-Day
-        <br>    
-        <br><input type=\"submit\" value=\"Total\" name =\"ordered\">
-        </div>
-        </form> ";
-        
 
 ?>
 
