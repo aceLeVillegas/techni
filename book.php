@@ -150,28 +150,39 @@ if(isset($_GET['artWork']) ){
                         21 => "<div id=\"21\" class=\"slider2\" ><img  id =\"mask2\" style= \"width:100%; height = 100%;\" src=\"images/busca.png\"></img><input  type=\"radio\" name=\"addCart\" value=\"21\"> Order</div>",
                         22 => "<div id=\"22\" class=\"slider2\" ><img  id =\"mask2\" style= \"width:100%; height = 100%;\" src=\"images/gift.png\"></img><input  type=\"radio\" name=\"addCart\" value=\"22\"> Order</div>"); 
        
-      if(isset($_GET["artWork"])){
+      //if(isset($_GET["artWork"])){
         
         //echo "Function 5 start. <br>";
         
         $narrowDown = "SELECT Product.*
                       FROM Product 
-                      WHERE Product.productTypeID = '" . $_GET["artWork"] . 
-                      "' ORDER BY `Product`.productName";
+                      WHERE Product.productTypeID = 6 ORDER BY `Product`.productName";
         
         
         $narState = $dbConn->prepare($narrowDown);
         $narState->execute();
         
          echo "<form class=\"info\" action=\"Cart.php\" method=\"post\" name=\"addCart\">";
+        $index = 0;
         while ($na = $narState->fetch()){
             
+
             foreach($productImgs as $key => $value){
                 
                 if($na['productID'] == $key){
                     
                     echo $value; 
-                    
+                    echo "<a class='button' href='#popup" . $index . "'>Description</a>";
+                    echo "<div id='popup" . $index . "' class='overlay'>";
+        	                echo "<div class='popup'>";
+        		                echo "<h2>Description</h2>";
+        		                echo "<a class='close' href='#'>&times;</a>";
+        		                echo "<div class='content'>";
+        		                    echo $na["description"];
+        		                echo "</div>";
+        	                echo "</div>";
+                        echo "</div>";
+                    $index++;
                 }
                 
             }// end of foreach 
@@ -180,7 +191,7 @@ if(isset($_GET['artWork']) ){
         echo "<br><input type=\"submit\" value=\"Purchase\" name =\"Purchase\">
         </form>";  
     
-    }// end of if 
+    //}// end of if 
     
     ?>
    </div>

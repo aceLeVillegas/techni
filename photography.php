@@ -165,6 +165,7 @@ if(isset($_GET['artWork']) ){
         $narState->execute();
         
          echo "<form class=\"info\" action=\"Cart.php\" method=\"post\" name=\"addCart\">";
+        $index = 0;
         while ($na = $narState->fetch()){
             
 
@@ -173,7 +174,17 @@ if(isset($_GET['artWork']) ){
                 if($na['productID'] == $key){
                     
                     echo $value; 
-                    
+                    echo "<a class='button' href='#popup" . $index . "'>Description</a>";
+                    echo "<div id='popup" . $index . "' class='overlay'>";
+        	                echo "<div class='popup'>";
+        		                echo "<h2>Description</h2>";
+        		                echo "<a class='close' href='#'>&times;</a>";
+        		                echo "<div class='content'>";
+        		                    echo $na["description"];
+        		                echo "</div>";
+        	                echo "</div>";
+                        echo "</div>";
+                    $index++;
                 }
                 
             }// end of foreach 
